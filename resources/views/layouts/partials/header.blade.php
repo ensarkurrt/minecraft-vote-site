@@ -9,13 +9,13 @@
 
     <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
 
-    <link rel="stylesheet" href="{{'css/minified.css?c1'}}">
+    <link rel="stylesheet" href="{{asset('css/minified.css?c1')}}">
 
     <meta name="description"
-        content="Hytale servers, find the best Hytale multiplayer servers to play with our Hytale server list.">
+          content="Hytale servers, find the best Hytale multiplayer servers to play with our Hytale server list.">
 
-    <link rel="stylesheet" href="{{'css/minified.css?45'}}">
-    <link rel="stylesheet" href="{{'css/newStyle.css?46'}}">
+    <link rel="stylesheet" href="{{asset('css/minified.css?45')}}">
+    <link rel="stylesheet" href="{{asset('css/newStyle.css?46')}}">
 
     <style>
         @font-face {
@@ -260,81 +260,116 @@
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" class="pushable">
-    <!--googleoff: all-->
-  {{--  <div class="ui left vertical inverted menu sidebar">
-        <a class="active item" href="https://thehytaleservers.org"
-           title="Hytale Servers | Hytale Server List Homepage">Home</a>
+<!--googleoff: all-->
+{{--  <div class="ui left vertical inverted menu sidebar">
+      <a class="active item" href="https://thehytaleservers.org"
+         title="Hytale Servers | Hytale Server List Homepage">Home</a>
 
-        <a class="item" href="https://thehytaleservers.org/blog" title="Hytale Blog, News &amp; Updates">Blog</a>
-        <a class="item" href="https://thehytaleservers.org/hosting"
-           title="Hytale Hosting, Hytale Servers Hosting">Hosting</a>
-        <a class="item" href="https://thehytaleservers.org/contacts" title="Contact Us For Any Enquiries">Contacts</a>
-        <a class="item" href="https://thehytaleservers.org/register"
-           title="Register New Account To Get More Players">Register</a>
-        <a class="item" href="https://thehytaleservers.org/login" title="Log Into Your Hytale List Account">Login</a>
-    </div>--}}
-    <!--googleon: all-->
-    <div class="pusher">
-        <header>
-            <nav class="ui top setti_menu menu default-color" itemscope=""
-                itemtype="http://www.schema.org/SiteNavigationElement">
-                <a href="#" class="active item toggle-sidebar" title="Toggle Hytale Server List Sidebar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="ui container">
-                    <a class="{{ Str::contains(\Request::route()->getName(), 'server.index') ? 'active' : '' }} item hd" href="{{route('server.index')}}" itemprop="url"
-                        title="{{config('app.name')}} | Anasayfa"><span itemprop="name">Anasayfa</span></a>
+      <a class="item" href="https://thehytaleservers.org/blog" title="Hytale Blog, News &amp; Updates">Blog</a>
+      <a class="item" href="https://thehytaleservers.org/hosting"
+         title="Hytale Hosting, Hytale Servers Hosting">Hosting</a>
+      <a class="item" href="https://thehytaleservers.org/contacts" title="Contact Us For Any Enquiries">Contacts</a>
+      <a class="item" href="https://thehytaleservers.org/register"
+         title="Register New Account To Get More Players">Register</a>
+      <a class="item" href="https://thehytaleservers.org/login" title="Log Into Your Hytale List Account">Login</a>
+  </div>--}}
+<!--googleon: all-->
+<div class="pusher">
+    <header>
+        <nav class="ui top setti_menu menu default-color" itemscope=""
+             itemtype="http://www.schema.org/SiteNavigationElement">
+            <a href="#" class="active item toggle-sidebar" title="Toggle Hytale Server List Sidebar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="ui container">
+                <a class="{{ Str::contains(\Request::route()->getName(), 'server.index') ? 'active' : '' }} item hd"
+                   href="{{route('server.index')}}" itemprop="url"
+                   title="{{config('app.name')}} | Anasayfa"><span itemprop="name">Anasayfa</span></a>
 
-                    {{--<span class="ui dropdown item hd" tabindex="0">
-                        Other Links
-                        <i class="dropdown icon"></i>
-                        <div class="menu" tabindex="-1">
-                            <a class="item" href="https://thehytaleservers.org/blog" itemprop="url"
-                                title="Hytale Blog, News &amp; Updates">
-                                <span itemprop="name">Blog</span>
-                            </a>
-                            <a class="item" href="https://thehytaleservers.org/status-checker" itemprop="url"
-                                title="Hytale Servers Status Checker">
-                                <span itemprop="name">Status Checker</span>
-                            </a>
-                            <a class="item" href="https://thehytaleservers.org/contacts" itemprop="url"
-                                title="Contact Us For Any Enquiries">
-                                <span itemprop="name">Contacts</span>
-                            </a>
-                        </div>
-                    </span>--}}
-                    <div class=" item hd" >
-                        <a href="{{route('auth.register')}}" class="{{ Str::contains(\Request::route()->getName(), 'auth.register') ? 'active' : '' }} item button" itemprop="url"
+                {{--<span class="ui dropdown item hd" tabindex="0">
+                    Other Links
+                    <i class="dropdown icon"></i>
+                    <div class="menu" tabindex="-1">
+                        <a class="item" href="https://thehytaleservers.org/blog" itemprop="url"
+                            title="Hytale Blog, News &amp; Updates">
+                            <span itemprop="name">Blog</span>
+                        </a>
+                        <a class="item" href="https://thehytaleservers.org/status-checker" itemprop="url"
+                            title="Hytale Servers Status Checker">
+                            <span itemprop="name">Status Checker</span>
+                        </a>
+                        <a class="item" href="https://thehytaleservers.org/contacts" itemprop="url"
+                            title="Contact Us For Any Enquiries">
+                            <span itemprop="name">Contacts</span>
+                        </a>
+                    </div>
+                </span>--}}
+                @if(!Auth::user())
+                    <div class="right menu">
+                        <a href="{{route('register')}}"
+                           class="{{ Str::contains(\Request::route()->getName(), 'register') ? 'active' : '' }} item button"
+                           itemprop="url"
                            title="{{config('app.name')}} | Kayıt Ol">
                             <span itemprop="name">Kayıt Ol</span>
                         </a>
-                        <a href="{{route('auth.login')}}" class="{{ Str::contains(\Request::route()->getName(), 'auth.login') ? 'active' : '' }} item button" itemprop="url"
+                        <a href="{{route('login')}}"
+                           class="{{ Str::contains(\Request::route()->getName(), 'login') ? 'active' : '' }} item button"
+                           itemprop="url"
                            title="{{config('app.name')}} | Giriş Yap">
                             <span itemprop="name">Giriş Yap</span>
                         </a>
                     </div>
-                </div>
-            </nav>
-           <!-- <div class="generalNoti">
-                <div class="ui container">
-                    <div class="left">
-                        <i class="thumbtack icon" aria-hidden="true"></i> We are open and <small>*</small>ready for
-                        launch of Hytale. Planning on opening a Hytale server? Register, add your future server &amp;
-                        start gaining rankings - be ready for the hype of Hytale servers! <small>*</small>We will make
-                        necessary changes and adjustments, once game released.
+                @else
+                    <div class="right menu">
+                        <a href="{{route('account')}}"
+                           class="{{ Str::contains(\Request::route()->getName(), 'addserver') || Str::contains(\Request::route()->getName(), 'myservers') || Str::contains(\Request::route()->getName(), 'account') ? 'active' : '' }} item button"
+                           itemprop="url"
+                           title="{{config('app.name')}} | Kontrol Paneli">
+                            <span itemprop="name">Kontrol Paneli</span>
+                        </a>
+                        <a href="#"
+                           onclick="document.getElementById('logoutForm').submit()"
+                           class="item button"
+                           itemprop="url"
+                           title="{{config('app.name')}} | Çıkış Yap">
+                            <span itemprop="name">Çıkış Yap</span>
+                        </a>
+
+                        <noscript>
+                            <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+                                <input type="submit" value="Çıkış Yap"/>
+                            </form>
+                        </noscript>
+
                     </div>
-                    <div class="right">
-                        <i id="close" class="close icon" aria-hidden="true"></i>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>-->
-        </header>
-        <main class="ui container under-menu" itemscope="" itemtype="http://schema.org/ItemList">
-            <link itemprop="itemListOrder" href="https://schema.org/ItemListOrderDescending">
-            <!--<div id="dropdownPanel" class="ui container menuVisibility">
+                @endif
+
+            </div>
+        </nav>
+        <!-- <div class="generalNoti">
+             <div class="ui container">
+                 <div class="left">
+                     <i class="thumbtack icon" aria-hidden="true"></i> We are open and <small>*</small>ready for
+                     launch of Hytale. Planning on opening a Hytale server? Register, add your future server &amp;
+                     start gaining rankings - be ready for the hype of Hytale servers! <small>*</small>We will make
+                     necessary changes and adjustments, once game released.
+                 </div>
+                 <div class="right">
+                     <i id="close" class="close icon" aria-hidden="true"></i>
+                 </div>
+                 <div class="clearfix"></div>
+             </div>
+         </div>-->
+    </header>
+    <main class="ui container under-menu" itemscope="" itemtype="http://schema.org/ItemList">
+        <link itemprop="itemListOrder" href="https://schema.org/ItemListOrderDescending">
+
+        <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+            @csrf
+        </form>
+    <!--<div id="dropdownPanel" class="ui container menuVisibility">
                 <div class="ui stackable grid content">
                     <div class="eight wide column">
                         <button id="toggleCategories" class="ui button submit width100 mbOnly">Hytale
@@ -541,9 +576,9 @@
                     </div>
                 </div>
             </div>-->
-            <a href="" title="Hytale Servers, Hytale Server List - TheHytaleServers">
-                <h1 class="projectName">
-                    <img src="{{asset('img/logo.png')}}" width="42" height="45" class="logoIco"
-                        alt="{{config('app.name','Laravel')}} Listing"> {{config('app.name','Laravel')}}
-                </h1>
-            </a>
+        <a href="" title="Hytale Servers, Hytale Server List - TheHytaleServers">
+            <h1 class="projectName">
+                <img src="{{asset('img/logo.png')}}" width="42" height="45" class="logoIco"
+                     alt="{{config('app.name','Laravel')}} Listing"> {{config('app.name','Laravel')}}
+            </h1>
+        </a>

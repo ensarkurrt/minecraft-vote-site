@@ -17,7 +17,7 @@ class CreateServersTable extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->text('name');
-            $table->string('ip',255)->unique();
+            $table->string('ip', 255)->unique();
             $table->text('image')->nullable();
             $table->text('slug')->nullable();
 
@@ -26,12 +26,13 @@ class CreateServersTable extends Migration
             $table->boolean('status')->default(0);
             $table->integer('onlinePlayer')->default(0);
             $table->integer('maxPlayer')->default(0);
-            $table->integer('rank')->default(0);
             $table->integer('uptime')->nullable();
             $table->dateTime('lastCheck')->nullable();
             $table->text('country')->nullable();
             $table->text('type')->nullable();
+            $table->text('token')->nullable();
             $table->boolean('isActive')->default(0);
+            $table->integer('vote')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

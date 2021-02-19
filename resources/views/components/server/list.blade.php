@@ -2,7 +2,7 @@
 
     {{-- Rank Bölümü--}}
     <td class="rank">
-        <span class="ranking" itemprop="position"> {{$server->rank}} </span>
+        <span class="ranking" itemprop="position"> {{$index}} </span>
     </td>
 
     {{-- İsim Bölümü--}}

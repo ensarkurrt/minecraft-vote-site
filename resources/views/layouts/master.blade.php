@@ -18,8 +18,8 @@
 
 @yield('content')
 
-<div class="ui stackable grid newsFeed">
-    <br>
+<div class="ui stackable grid ">
+    @yield('contentAccount')
     {{--  <div class="eight wide column">
          <div class="section-title">
              Hytale Blogs, News &amp; Updates
