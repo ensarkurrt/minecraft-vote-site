@@ -1,13 +1,14 @@
-<x-guest-layout>
-    <div class="pt-4 bg-gray-100">
-        <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
-            <div>
-                <x-jet-authentication-card-logo />
-            </div>
+@extends('layouts.master')
 
-            <div class="w-full sm:max-w-2xl mt-6 p-6 bg-white shadow-md overflow-hidden sm:rounded-lg prose">
-                {!! $terms !!}
-            </div>
+@section('title','Üyelik Sözleşmesi')
+
+@section('content')
+<div class="ui segments enchanced maZer">
+    <div class=" stackable" style="padding: 5%">
+        <div class="eight wide column ">
+            {!! $terms !!}
         </div>
     </div>
-</x-guest-layout>
+</div>
+
+@endsection
