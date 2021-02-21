@@ -18,17 +18,17 @@ class CreateServersTable extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->text('name');
             $table->string('ip', 255)->unique();
-            $table->text('image')->nullable();
-            $table->text('slug')->nullable();
+            $table->text('image');
 
             //Detail Page
+            $table->text('description')->nullable();
             $table->text('webSiteUrl')->nullable();
             $table->boolean('status')->default(0);
             $table->integer('onlinePlayer')->default(0);
             $table->integer('maxPlayer')->default(0);
             $table->integer('uptime')->nullable();
             $table->dateTime('lastCheck')->nullable();
-            $table->text('country')->nullable();
+            $table->string('country',255)->default('tr');
             $table->text('type')->nullable();
             $table->text('token')->nullable();
             $table->boolean('isActive')->default(0);

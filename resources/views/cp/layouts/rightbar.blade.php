@@ -12,6 +12,25 @@
         </div>
 
         {{-- Kullanıcı adını değiştimek --}}
-       @yield('rightBarContent')
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="ui error message">
+                    <i class="close icon"></i>
+                    <div class="header"></div>
+                    <p>{{ $error }}</p>
+                </div>
+            @endforeach
+        @endif
+
+        @if (session('success'))
+            <div class="ui success message">
+                <i class="close icon"></i>
+                <div class="header"></div>
+                <p>{{ session('success') }}</p>
+            </div>
+        @endif
+
+        @yield('rightBarContent')
     </div>
 </div>

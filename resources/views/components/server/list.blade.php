@@ -7,7 +7,7 @@
 
     {{-- İsim Bölümü--}}
     <td class="name">
-        <a href="" itemprop="url"
+        <a href="{{route('server.show', ['id' => $server->id])}}" itemprop="url"
            title="{{$server->name}}">
             <h3 class="server-name" itemprop="name">
                 <label class="listing">Server</label>
@@ -18,10 +18,10 @@
 
     {{-- Resim Bölümü--}}
     <td class="server">
-        <a href="/{{$server->slug}}" class="bnr" title="{{$server->name}} Page">
+        <a href="{{route('server.show', ['id' => $server->id])}}" class="bnr" title="{{$server->name}} Page">
             <img class="ui fluid image lazyImg fade"
-                 src="{{asset('img/servers/'.$server->image)}}"
-                 data-src="{{asset('img/servers/'.$server->image)}}" width="468" height="60"
+                 src="{{asset($server->image)}}"
+                 data-src="{{asset($server->image)}}" width="468" height="60"
                  itemprop="image" alt="{{config('app.name')}} - {{$server->name}} Banner" data-loaded="true">
         </a>
         <div class="server-ip">

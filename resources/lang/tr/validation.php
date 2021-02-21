@@ -164,6 +164,11 @@ return [
         'password' => 'Şifre',
         'new_password' => 'Yeni şifre',
         'new_password_again' => 'Yeni şifre tekrar',
+        'ip' => 'Sunucu İp/Host',
+        'website' => 'Web Site',
+        'banner' => 'Banner resim',
+        'description' => 'Açıklama',
+        'types' => 'Sunucu tipi'
     ],
 
 ];
