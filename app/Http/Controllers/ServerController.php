@@ -15,25 +15,6 @@ use Laravel\Fortify\Rules\Password;
 
 class ServerController extends Controller
 {
-    // TODO:: Types query from database
-    public function index(Request $request)
-    {
-        $servers = Server::where('isActive', 1)->orderByRaw("status DESC, vote DESC")->paginate(5);
-
-        $pagination = json_decode($servers->toJson(), true);
-
-        return view('index', compact('servers'), compact('pagination'));
-
-        /*
-          <div class="ui warning message">
-<i class="close icon"></i>
-<div class="header">Actions Required</div>
-<p>Please verify your email address in <strong>24 Hours</strong> or your account will get deleted. Check your email inbox/spambox for verification code.</p>
-</div>
-
-        */
-    }
-
     public function show(Request $request, $id)
     {
         $server = Server::where('id', $id)->where('isActive', 1)->with('user')->get();
@@ -41,7 +22,7 @@ class ServerController extends Controller
             abort(404);
         }
         $server = $server->first();
-        return view('server', compact('server'));
+        return view('main.server', compact('server'));
     }
 
     public function serverEdit(Request $request, $id)

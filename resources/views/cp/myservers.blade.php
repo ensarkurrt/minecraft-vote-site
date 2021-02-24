@@ -9,7 +9,7 @@
     <table class="ui very basic table servers userServers" id="cp" style="border: none !important;">
         <tbody>
         @foreach($servers as $server)
-            @include('components.server.accountList',['server'=>$server])
+            @include('components.server.accountList',['main.server'=>$server])
         @endforeach
 
         @if(count($servers) == 0 )

@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\DefaultController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ServerController;
+use \App\Http\Controllers\VoteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
@@ -23,10 +25,17 @@ use Laravel\Fortify\Http\Controllers\RegisteredUserController;
     return view('index');
 });*/
 
-Route::get('/', [ServerController::class, 'index'])->name('server.index');
+Route::get('/', [DefaultController::class, 'index'])->name('index');
+
+Route::get('/about-us', [DefaultController::class, 'about'])->name('about');
+
+Route::get('/contact', [DefaultController::class, 'contact'])->name('contact');
 
 Route::get('/server/{id}', [ServerController::class, 'show'])->name('server.show');
 
+Route::get('/vote/{id}', [VoteController::class, 'show'])->name('vote.show');
+
+Route::post('/vote/{id}', [VoteController::class, 'store'])->name('vote.store');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

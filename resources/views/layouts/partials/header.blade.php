@@ -9,7 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
 
-    <link rel="stylesheet" href="{{asset('css/minified.css?c1')}}">
+    {{--<link rel="stylesheet" href="{{asset('css/minified.css?c1')}}">--}}
 
     <meta name="description"
           content="Hytale servers, find the best Hytale multiplayer servers to play with our Hytale server list.">
@@ -49,9 +49,9 @@
         .or:before,
         .ui.button.submit {
             color: #ffffff !important;
-            background: #4b5787 !important;
             opacity: .99
         }
+        /*background: #4b5787 !important;*/
 
         .insta-search .button {
             color: #ffffff !important;
@@ -284,9 +284,15 @@
                 <span class="icon-bar"></span>
             </a>
             <div class="ui container">
-                <a class="{{ Str::contains(\Request::route()->getName(), 'server.index') ? 'active' : '' }} item hd"
-                   href="{{route('server.index')}}" itemprop="url"
+                <a class="{{ Str::contains(\Request::route()->getName(), 'index') ? 'active' : '' }} item hd"
+                   href="{{route('index')}}" itemprop="url"
                    title="{{config('app.name')}} | Anasayfa"><span itemprop="name">Anasayfa</span></a>
+                <a class="{{ Str::contains(\Request::route()->getName(), 'about') ? 'active' : '' }} item hd"
+                   href="{{route('about')}}" itemprop="url"
+                   title="{{config('app.name')}} | Hakkımızda"><span itemprop="name">Hakkımızda</span></a>
+                <a class="{{ Str::contains(\Request::route()->getName(), 'contact') ? 'active' : '' }} item hd"
+                   href="{{route('contact')}}" itemprop="url"
+                   title="{{config('app.name')}} | Hakkımızda"><span itemprop="name">İletişim</span></a>
 
                 {{--<span class="ui dropdown item hd" tabindex="0">
                     Other Links

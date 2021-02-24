@@ -34720,7 +34720,7 @@ body.pushable > .pusher {
 
 .ui.basic.button:not(.green):not(.red), .ui.basic.buttons .button:not(.green):not(.red) {
     color: #FFF !important;
-    font-size: 600;
+  /*  font-size: 600;*/
     background: #475877 !important;
     border-bottom: 5px solid rgba(0, 0, 0, .2) !important;
     transition: background .6s
@@ -34728,7 +34728,7 @@ body.pushable > .pusher {
 
 .ui.basic.button:not(.green):not(.red):active, .ui.basic.button:not(.green):not(.red):hover, .ui.basic.buttons .button:not(.green):not(.red):hover {
     color: #FFF !important;
-    font-size: 600;
+   /* font-size: 600;*/
     background: #576a8d !important;
     border-bottom: 5px solid rgba(0, 0, 0, .2) !important;
     transition: background .6s
