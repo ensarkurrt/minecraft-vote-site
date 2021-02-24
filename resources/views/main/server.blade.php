@@ -8,7 +8,7 @@
             <table class="ui striped table info">
                 <thead class="dispy">
                 <tr>
-                    <th class="rank default-color" colspan="2" >
+                    <th class="rank default-color" colspan="2">
                         <i class="server icon" aria-hidden="true"></i> {{$server->name}}
                     </th>
                 </tr>
@@ -30,12 +30,14 @@
                     <td>IP</td>
                     <td>{{$server->ip}}</td>
                 </tr>
-                <tr>
-                    <td>Web Site</td>
-                    <td><a href="{{$server->webSiteUrl ?? '#'}}" rel="nofollow noopener"
-                           target="{{$server->webSiteUrl ? '_blank' : ''}}"
-                           title="{{$server->name }} Website'sini ziyaret et">Website'sini ziyaret et</a></td>
-                </tr>
+                @if($server->webSiteUrl != null)
+                    <tr>
+                        <td>Web Site</td>
+                        <td><a href="{{$server->webSiteUrl}}" rel="nofollow noopener"
+                               target="_blank"
+                               title="{{$server->name }} Website'sini ziyaret et">Website'sini ziyaret et</a></td>
+                    </tr>
+                @endif
                 <tr>
                     <td>Oyuncular</td>
                     <td>{{$server->onlinePlayer}}/{{$server->maxPlayer}}</td>
