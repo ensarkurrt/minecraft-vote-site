@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5778f68d-d441-47aa-b68a-89d3335b591f" name="Default Changelist" comment="" />
+    <list default="true" id="5778f68d-d441-47aa-b68a-89d3335b591f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/server/accountList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/server/accountList.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +23,9 @@
         <option value="composer.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -149,8 +158,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -168,6 +183,7 @@
       <updated>1612867839409</updated>
       <workItem from="1612867840985" duration="272000" />
       <workItem from="1612868130301" duration="1289000" />
+      <workItem from="1614198030302" duration="1415000" />
     </task>
     <servers />
   </component>
@@ -175,9 +191,17 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="562" y="355" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1614198525065">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="562" y="355" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1680.1050@0.0.1680.1050" timestamp="1614198525065" />
     <state x="776" y="185" key="SettingsEditor" timestamp="1612868535842">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="776" y="185" key="SettingsEditor/277.1080.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1612868535842" />
+    <state x="542" y="264" width="595" height="522" key="find.popup" timestamp="1614199519257">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="542" y="264" width="595" height="522" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1614199519257" />
   </component>
 </project>

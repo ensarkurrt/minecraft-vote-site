@@ -17,11 +17,25 @@ class ServerController extends Controller
 {
     public function show(Request $request, $id)
     {
-        $server = Server::where('id', $id)->where('isActive', 1)->with('user')->get();
+
+        $server = Server::where('id', $id)->with('user')->get();
+
         if (count($server) == 0) {
             abort(404);
         }
+
         $server = $server->first();
+        if ($request->user()) {
+            if ($request->user()->id != $server->user_id) {
+                if (!$server->isActive) {
+                    abort(404);
+                }
+            }
+        }else{
+            if (!$server->isActive) {
+                abort(404);
+            }
+        }
         return view('main.server', compact('server'));
     }
 
@@ -57,7 +71,7 @@ class ServerController extends Controller
 
         $banner = $server->image;
 
-        if($request->banner){
+        if ($request->banner) {
             $banner = $this->upload_server_banner($request);
         }
 

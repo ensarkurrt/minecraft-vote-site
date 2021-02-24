@@ -34718,17 +34718,17 @@ body.pushable > .pusher {
     box-shadow: 0 4px 6px rgba(0, 0, 0, .2) !important
 }
 
-.ui.basic.button:not(.green):not(.red), .ui.basic.buttons .button:not(.green):not(.red) {
+.ui.basic.button:not(.green):not(.red):not(.orange), .ui.basic.buttons .button:not(.green):not(.red):not(.orange) {
     color: #FFF !important;
-  /*  font-size: 600;*/
+    /*  font-size: 600;*/
     background: #475877 !important;
     border-bottom: 5px solid rgba(0, 0, 0, .2) !important;
     transition: background .6s
 }
 
-.ui.basic.button:not(.green):not(.red):active, .ui.basic.button:not(.green):not(.red):hover, .ui.basic.buttons .button:not(.green):not(.red):hover {
+.ui.basic.button:not(.green):not(.red):not(.orange):active, .ui.basic.button:not(.green):not(.red):not(.orange):hover, .ui.basic.buttons .button:not(.green):not(.red):not(.orange):hover {
     color: #FFF !important;
-   /* font-size: 600;*/
+    /* font-size: 600;*/
     background: #576a8d !important;
     border-bottom: 5px solid rgba(0, 0, 0, .2) !important;
     transition: background .6s

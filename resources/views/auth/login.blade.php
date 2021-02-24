@@ -3,7 +3,8 @@
 @section('title','Giriş Yap')
 
 @section('content')
-    <div class="ui segments enchanced maZer">
+    <div class="ui segments enchanced">
+        <h2 class="section-title"> @yield('title') </h2>
         <div class="ui stackable grid loggy">
             <div class="eight wide column left">
                 <form class="ui form" action="{{ route('login') }}" method="post">

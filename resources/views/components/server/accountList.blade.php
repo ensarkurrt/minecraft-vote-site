@@ -2,8 +2,10 @@
     <td class="server">
         <a href="{{route('server.show', ['id' => $server->id])}}">
             <div class="name">
+
                 <h3 class="server-name">
-                    {{$server->name}} </h3>
+                    {{$server->name}} <span class="ui basic {{$server->isActive ? 'green' : 'orange' }} button">{{$server->isActive ? 'Onaylandı' : 'Onay Bekliyor' }}</span>  </h3>
+
             </div>
         </a>
         <div class="serverActions">
