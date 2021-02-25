@@ -21,7 +21,7 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::get('/user/profile', [UserProfileController::class, 'show'])
                     ->name('profile.show');
 
-        // API...
+        // Api...
         if (Jetstream::hasApiFeatures()) {
             Route::get('/user/api-tokens', [ApiTokenController::class, 'index'])->name('api-tokens.index');
         }

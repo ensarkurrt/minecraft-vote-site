@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\DefaultController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\AccountController;
-use App\Http\Controllers\ServerController;
-use \App\Http\Controllers\VoteController;
+use App\Http\Controllers\Web\DefaultController;
+use App\Http\Controllers\Web\AccountController;
+use App\Http\Controllers\Web\ServerController;
+use \App\Http\Controllers\Web\VoteController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 
