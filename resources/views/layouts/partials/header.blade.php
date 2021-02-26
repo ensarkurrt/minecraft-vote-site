@@ -290,6 +290,9 @@
                 <a class="{{ Str::contains(\Request::route()->getName(), 'about') ? 'active' : '' }} item hd"
                    href="{{route('about')}}" itemprop="url"
                    title="{{config('app.name')}} | Hakkımızda"><span itemprop="name">Hakkımızda</span></a>
+                <a class="{{ Str::contains(\Request::route()->getName(), 'ping') ? 'active' : '' }} item hd"
+                   href="{{route('ping.show')}}" itemprop="url"
+                   title="{{config('app.name')}} | Hakkımızda"><span itemprop="name">Test Server</span></a>
                 <a class="{{ Str::contains(\Request::route()->getName(), 'contact') ? 'active' : '' }} item hd"
                    href="{{route('contact')}}" itemprop="url"
                    title="{{config('app.name')}} | Hakkımızda"><span itemprop="name">İletişim</span></a>

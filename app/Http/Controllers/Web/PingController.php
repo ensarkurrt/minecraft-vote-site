@@ -1,32 +1,38 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Web;
 
-use App\Http\Controllers\Web\Controller;
+use App\Models\Ping;
 use App\Models\Server;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
-use Illuminate\Validation\ValidationException;
-use Laravel\Fortify\Rules\Password;
+use Laravel\Jetstream\Jetstream;
+use League\CommonMark\CommonMarkConverter;
+use League\CommonMark\Environment;
+use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
 
 class PingController extends Controller
 {
-    public function index($host, $port)
+    // TODO:: Types table query from database
+    public function index(Request $request)
     {
-       // header('Content-type:text/json');
+        return view('main.ping');
+    }
 
-        /*  $host = $request->host;
-          $port = $request->port;*/
+    public function show(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'host' => ['required', 'string', 'max:100'],
+        ])->validate();
 
-        require_once 'ping/ApiQuery.php';
-        require_once 'ping/ApiPing.php';
+        $host = $request->host;
+        $port = 25565;
 
-       // require_once 'ping/closeTags.php';
+        require_once app_path() . '/Http/Controllers/Api/ping/ApiQuery.php';
+        require_once app_path() . '/Http/Controllers/Api/ping/ApiPing.php';
+
+        // require_once 'ping/closeTags.php';
 
         if (($Info = $Query->GetInfo()) !== false) {
             $hostNameHtml = str_replace("§k", "", $Info['HostName']);
@@ -133,7 +139,7 @@ class PingController extends Controller
                 'motd' => array(
                     'ingame' => $InfoPing['description'],
                     'clean' => $cleanHostName,
-                   // 'html' => closeTags($hostNameHtml)
+                    // 'html' => closeTags($hostNameHtml)
                 ),
                 'host' => array(
                     'host' => $host,
@@ -159,7 +165,29 @@ class PingController extends Controller
                 'port' => $port
             );
         }
+        $ping = new Ping();
+        $ping->status = $json['status'];
+        if ($ping->status == 'Online') {
+            $ping->host = $json['host']['host'];
+            $ping->motd = $this->parseMotd($json['motd']['clean']);
+            $ping->maxPlayer = $json['players']['max'];
+            $ping->onlinePlayer = $json['players']['online'];
+            $ping->version = $json['version']['version'];
+            $ping->protocol = $json['version']['protocol'];
+        }else{
+            $ping->host = $host;
+        }
+        return view('main.ping', compact('ping'));
+    }
 
-        return $json;
+    public function parseMotd($arr)
+    {
+        if (isset($arr['extra'])) {
+            if (isset($arr['extra'][0]['text'])) {
+                return ltrim(rtrim($arr['extra'][0]['text']));
+            }
+        } else {
+            return ltrim(rtrim($arr));
+        }
     }
 }

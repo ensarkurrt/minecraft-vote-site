@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\DefaultController;
 use App\Http\Controllers\Web\AccountController;
+use App\Http\Controllers\Web\PingController;
 use App\Http\Controllers\Web\ServerController;
 use \App\Http\Controllers\Web\VoteController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,10 @@ Route::get('/server/{id}', [ServerController::class, 'show'])->name('server.show
 Route::get('/vote/{id}', [VoteController::class, 'show'])->name('vote.show');
 
 Route::post('/vote/{id}', [VoteController::class, 'store'])->name('vote.store');
+
+Route::get('/ping', [PingController::class, 'index'])->name('ping.show');
+
+Route::post('/ping', [PingController::class, 'show'])->name('ping.detail');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
