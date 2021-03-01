@@ -31,7 +31,7 @@ class ServerController extends Controller
                     abort(404);
                 }
             }
-        }else{
+        } else {
             if (!$server->isActive) {
                 abort(404);
             }
@@ -41,10 +41,12 @@ class ServerController extends Controller
 
     public function serverEdit(Request $request, $id)
     {
-        $server = Server::where('id', $id)->where('isActive', 1)->with('user')->get();
+        $server = Server::where('id', $id)->with('user')->get();
+
         if (count($server) == 0) {
             abort(404);
         }
+
         $user = $request->user();
         $server = $server->first();
 
@@ -96,7 +98,6 @@ class ServerController extends Controller
 
     public function deleteServer(Request $request, $server_id)
     {
-
         $server = Server::find($server_id);
 
         if (!$server) {
@@ -115,7 +116,13 @@ class ServerController extends Controller
 
     public function serverCreate(Request $request)
     {
-        return view('cp.addserver');
+        $user = $request->user();
+
+        $servers = Server::where('user_id', $user->id)->get();
+
+        $canAdd = count($servers) == 0;
+
+        return view('cp.addserver', compact('canAdd'));
     }
 
     public function serverStore(Request $request)

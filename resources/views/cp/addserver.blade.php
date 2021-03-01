@@ -2,6 +2,7 @@
 
 
 @section('rightBarContent')
+    @if(isset($canAdd) && $canAdd)
     <form class="ui small form" action="{{route('server.store')}}" enctype="multipart/form-data"
           method="post">
         <h4 class="ui dividing header"><i class="plus square icon"></i> Server Ekle</h4>
@@ -55,6 +56,13 @@
         <button class="ui button submit" type="submit" name="submit">Gönder</button>
         <a class="ui red basic button" href="{{route('server.list')}}">İptal</a>
     </form>
+    @else
+        <div class="ui danger message">
+            <i class="close icon"></i>
+            <div class="header"></div>
+            <p>Kullanıcılar maksimum 1 adet sunucu ekleyebilir.</p>
+        </div>
+    @endif
 @endsection
 
 

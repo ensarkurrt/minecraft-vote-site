@@ -59,5 +59,5 @@ Route::prefix('cp')->middleware(['auth:sanctum', 'verified'])->group(function ()
     Route::get('/edit/{id}',[ServerController::class,'serverEdit'])->name('server.edit');
     Route::post('/edit/{id}',[ServerController::class,'serverUpdate'])->name('server.update');
 
-    Route::get('/delete/{server_id}',[ServerController::class,'serverDelete'])->name('server.delete');
+    Route::get('/delete/{server_id}',[ServerController::class,'deleteServer'])->name('server.delete');
 });
